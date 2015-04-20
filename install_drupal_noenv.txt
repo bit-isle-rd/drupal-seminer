@@ -15,6 +15,9 @@ echo "mysql-server mysql-server/root_password_again password ${DB_ROOTPASS}" | s
 sudo apt-get install language-pack-ja php5 libapache2-mod-php5 php5-mysql mysql-server php5-gd apache2 -y
 sudo update-locale LANG=ja_JP.UTF-8
 
+echo Asia/Tokyo|sudo tee /etc/timezone
+sudo dpkg-reconfigure -f noninteractive tzdata
+
 cat << EOF > install_db.sql
 CREATE DATABASE ${DB_NAME} CHARACTER SET utf8;
 
