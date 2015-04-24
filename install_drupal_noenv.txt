@@ -37,7 +37,7 @@ sudo service apache2 restart
 
 wget http://ftp.drupal.org/files/projects/${DR_VERSION}.tar.gz 
 tar zxf ${DR_VERSION}.tar.gz
-cp -ar ${DR_VERSION}/* /var/www/html/
+cp -a ${DR_VERSION}/. /var/www/html
 cd /var/www/html/sites/default/
 mkdir files
 cp default.settings.php settings.php
