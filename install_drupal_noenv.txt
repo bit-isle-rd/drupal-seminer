@@ -33,10 +33,6 @@ LNCNT=`grep -n "Directory /var/www" /etc/apache2/apache2.conf|awk -F ':' '{print
 #sed -e -i `grep -n "Directory /var/www" /etc/apache2/apache2.conf|awk -F ':' '{print $1","$1 + 5}'`s/\ None/\ All/g /etc/apache2/apache2.conf
 sed -i ${LNCNT}s/\ None/\ All/g /etc/apache2/apache2.conf
 
-cat << EOF > /var/www/html/.htaccess
-Redirect permanent /index.html /index.php
-EOF
-
 sudo service apache2 restart
 
 wget http://ftp.drupal.org/files/projects/${DR_VERSION}.tar.gz 
